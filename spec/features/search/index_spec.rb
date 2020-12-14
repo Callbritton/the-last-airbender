@@ -20,7 +20,7 @@ feature "User can get detailed member info for a given nation" do
 
     select "Fire Nation", from: :nation
 
-    click_on 'Search For Members'
+    click_button 'Search For Members'
 
     expect(current_path).to eq("/search")
 
