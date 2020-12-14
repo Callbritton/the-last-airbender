@@ -1,0 +1,16 @@
+<h1>Total Members: <%= @members.count %></h1>
+<% @members.each do |member| %>
+  <div class="member">
+    <h4><%= member.name  %></h4>
+      <% if !member.photo.nil? %>
+        <%= image_tag(member.photo) %>
+      <% end %>
+        <p>Affiliation: <%= member.affiliation %></p>
+        <% if !member.allies.nil? %>
+          <p>Allies: <%= member.allies.join(", ") %></p>
+        <% end %>
+        <% if !member.enemies.nil? %>
+          <p>Enemies: <%= member.enemies.join(", ") %></p>
+        <% end %>
+    <% end %>
+  </div>
